@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart'; // Untuk format tanggal
+import 'package:intl/intl.dart';
 
 // Model Hotel
 class HotelModel {
@@ -7,7 +7,7 @@ class HotelModel {
   final String description;
   final String imageUrl;
   final double price;
-  DateTime? bookingDate; // Tanggal pemesanan (opsional)
+  DateTime? bookingDate;
 
   HotelModel({
     required this.name,
@@ -40,7 +40,6 @@ class HotelModel {
   }
 }
 
-// Daftar hotel
 List<HotelModel> sampleHotels = [
   HotelModel(
     name: 'Standard Room',
@@ -72,7 +71,6 @@ List<HotelModel> sampleHotels = [
   ),
 ];
 
-// Halaman Daftar Hotel
 class HotelListPage extends StatelessWidget {
   const HotelListPage({super.key});
 
@@ -116,7 +114,6 @@ class HotelListPage extends StatelessWidget {
   }
 }
 
-// Halaman Detail Hotel
 class HotelDetailPage extends StatefulWidget {
   final HotelModel hotel;
 
