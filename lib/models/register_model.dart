@@ -9,7 +9,6 @@ class RegisterModel {
     required this.password,
   });
 
-  // Konversi RegisterModel menjadi Map untuk menyimpan ke database
   Map<String, dynamic> toMap() {
     return {
       'username': username,
@@ -18,7 +17,6 @@ class RegisterModel {
     };
   }
 
-  // Konversi dari Map (dari database) menjadi RegisterModel
   factory RegisterModel.fromMap(Map<String, dynamic> map) {
     return RegisterModel(
       username: map['username'],

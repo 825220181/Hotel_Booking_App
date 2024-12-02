@@ -7,7 +7,6 @@ class LoginModel {
     required this.password,
   });
 
-  // Konversi LoginModel menjadi Map untuk keperluan validasi
   Map<String, dynamic> toMap() {
     return {
       'username': username,

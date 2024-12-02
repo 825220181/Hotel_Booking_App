@@ -35,7 +35,6 @@ class HotelModel {
     };
   }
 
-  // Membuat objek HotelModel dari Map
   factory HotelModel.fromMap(Map<String, dynamic> map) {
     return HotelModel(
       name: map['name'],
@@ -50,7 +49,6 @@ class HotelModel {
   }
 }
 
-// Dummy data untuk daftar hotel
 List<HotelModel> sampleHotels = [
   HotelModel(
     name: 'Standard Room',
@@ -116,7 +114,6 @@ class HotelListPage extends StatelessWidget {
   }
 }
 
-// Halaman detail hotel
 class HotelDetailPage extends StatefulWidget {
   final HotelModel hotel;
 

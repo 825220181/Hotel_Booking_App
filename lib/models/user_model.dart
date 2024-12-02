@@ -4,7 +4,7 @@ class UserModel {
   final String email;
   final String password;
 
-  // Konstruktor
+
   UserModel({
     this.id,
     required this.username,
@@ -12,7 +12,7 @@ class UserModel {
     required this.password,
   });
 
-  // Fungsi untuk mengubah objek User menjadi map
+
   Map<String, dynamic> toMap() {
     return {
       'id': id,
@@ -22,7 +22,7 @@ class UserModel {
     };
   }
 
-  // Fungsi untuk mengubah map ke objek User
+
   factory UserModel.fromMap(Map<String, dynamic> map) {
     return UserModel(
       id: map['id'],

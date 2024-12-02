@@ -15,7 +15,6 @@ class DatabaseHelper {
 
   DatabaseHelper._internal();
 
-  // Mendapatkan instance database
   Future<Database> get database async {
     if (_database != null) {
       return _database!;
@@ -24,7 +23,6 @@ class DatabaseHelper {
     return _database!;
   }
 
-  // Inisialisasi database
   Future<Database> _initDatabase() async {
     final databasesPath = await getDatabasesPath();
     final path = join(databasesPath, 'hotels.db');
@@ -32,7 +30,6 @@ class DatabaseHelper {
   }
 
   void _onCreate(Database db, int version) async {
-    // Tabel users
     await db.execute('''
     CREATE TABLE users (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -69,13 +66,11 @@ class DatabaseHelper {
   ''');
   }
 
-  // Menyimpan user ke dalam database
   Future<int> insertUser(RegisterModel register) async {
     var db = await database;
     return await db.insert('users', register.toMap());
   }
 
-  // Mengambil user berdasarkan username
   Future<UserModel?> getUserByUsername(String username) async {
     var db = await database;
     var result = await db.query(
@@ -89,7 +84,6 @@ class DatabaseHelper {
     return null;
   }
 
-  // Cek apakah username atau email sudah terdaftar
   Future<bool> isUsernameOrEmailTaken(String username, String email) async {
     var db = await database;
     var usernameResult = await db.query(
@@ -116,7 +110,6 @@ class DatabaseHelper {
     return result.isNotEmpty;
   }
 
-  // Update data user
   Future<int> updateUser(UserModel user) async {
     var db = await database;
     return await db.update(
@@ -127,7 +120,6 @@ class DatabaseHelper {
     );
   }
 
-  // Hapus user berdasarkan id
   Future<int> deleteUser(int id) async {
     var db = await database;
     return await db.delete(
@@ -137,7 +129,6 @@ class DatabaseHelper {
     );
   }
 
-  // HOTEL
   Future<void> addTransactionHotel(TransactionHotelModel transaction) async {
     var db = await database;
 
@@ -162,7 +153,6 @@ class DatabaseHelper {
     return result.isNotEmpty ? result.map((e) => TransactionHotelModel.fromMap(e)).toList() : [];
   }
 
-  // FOOD
   Future<void> addTransactionFood(TransactionFoodModel transaction) async {
     var db = await database;
 

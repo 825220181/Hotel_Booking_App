@@ -21,11 +21,11 @@ class TransactionHotelModel {
     required this.date,
   });
 
-  // Mengonversi objek TransactionHotelModel ke Map untuk disimpan di SQLite
+
   Map<String, dynamic> toMap() {
     return {
       'userId': userId,
-      'hotel': jsonEncode(hotel.toMap()), // Menyimpan seluruh data hotel dalam JSON
+      'hotel': jsonEncode(hotel.toMap()),
       'numberOfRooms': numberOfRooms,
       'totalPrice': totalPrice,
       'paymentMethod': paymentMethod,
@@ -33,11 +33,11 @@ class TransactionHotelModel {
     };
   }
 
-  // Membaca dari Map dan membuat objek TransactionHotelModel
+
   factory TransactionHotelModel.fromMap(Map<String, dynamic> map) {
     return TransactionHotelModel(
       userId: map['userId'],
-      hotel: HotelModel.fromMap(jsonDecode(map['hotel'])), // Mengambil objek hotel dari JSON
+      hotel: HotelModel.fromMap(jsonDecode(map['hotel'])),
       numberOfRooms: map['numberOfRooms'],
       totalPrice: map['totalPrice'],
       paymentMethod: map['paymentMethod'],

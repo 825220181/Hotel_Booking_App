@@ -21,7 +21,6 @@ class TransactionFoodModel {
     required this.date,
   });
 
-  // Mengonversi objek TransactionFoodModel ke Map untuk disimpan di SQLite
   Map<String, dynamic> toMap() {
     return {
       'userId': userId,
@@ -33,7 +32,6 @@ class TransactionFoodModel {
     };
   }
 
-  // Membaca dari Map dan membuat objek TransactionFoodModel
   factory TransactionFoodModel.fromMap(Map<String, dynamic> map) {
     return TransactionFoodModel(
       userId: map['userId'],
