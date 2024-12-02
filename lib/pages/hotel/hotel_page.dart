@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hotel_booking_app/models/hotel_model.dart'; // Tetap impor untuk HotelModel
-import 'package:hotel_booking_app/pages/hotel/hotel_detail_page.dart' as detail_page; // Alias untuk menghindari konflik
+import 'package:hotel_booking_app/models/hotel_model.dart';
+import 'package:hotel_booking_app/pages/hotel/hotel_detail_page.dart' as detail_page;
 import 'package:hotel_booking_app/pages/widgets/hotel_card.dart';
 
 

@@ -1,9 +1,9 @@
 import 'dart:convert';
-
 import 'package:hotel_booking_app/models/register_model.dart';
 import 'package:hotel_booking_app/models/transaction_food_model.dart';
 import 'package:hotel_booking_app/models/transaction_hotel_model.dart';
 import 'package:hotel_booking_app/models/user_model.dart';
+import 'package:hotel_booking_app/models/hotel_model.dart'; // Tambahkan model ini
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 
@@ -143,7 +143,7 @@ class DatabaseHelper {
 
     await db.insert('hotel_transactions', {
       'userId': transaction.userId,
-      'hotel': jsonEncode(transaction.hotel.toMap()),
+      'hotel': jsonEncode(transaction.hotel.toMap()), // Menyimpan data hotel dalam JSON
       'numberOfRooms': transaction.numberOfRooms,
       'totalPrice': transaction.totalPrice,
       'paymentMethod': transaction.paymentMethod,

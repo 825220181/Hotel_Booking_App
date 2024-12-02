@@ -15,9 +15,8 @@ class HotelDetailPage extends StatefulWidget {
 }
 
 class _HotelDetailPageState extends State<HotelDetailPage> {
-  int _numberOfRooms = 1; // Default to 1 room
+  int _numberOfRooms = 1;
 
-  // Method to update the number of rooms
   void _increaseRooms() {
     setState(() {
       _numberOfRooms++;
@@ -35,7 +34,7 @@ class _HotelDetailPageState extends State<HotelDetailPage> {
   @override
   Widget build(BuildContext context) {
     final hotel = widget.hotel;
-    final totalPrice = hotel.price * _numberOfRooms; // Calculate total price
+    final totalPrice = hotel.price * _numberOfRooms;
 
     return Scaffold(
       backgroundColor: AppColors.white,
